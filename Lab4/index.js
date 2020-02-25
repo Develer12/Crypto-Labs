@@ -44,14 +44,7 @@ function CesarSH(a, b, key){
 
     for(let letter in ghystogram){
         let percent = (ghystogram[letter]/keySH.length);
-        let h = 200 * percent;
-        let line = document.createElement('div');
-        line.innerHTML = `
-        <div style="width: 50px; height: ${h}px; background-color: coral;">
-            ${Math.floor(percent*100)}%
-        </div>
-        <p>${letter}</p>`
-        ghysto.append(line);
+        DrowGhysto(ghysto, percent, letter)
         console.log(letter + ' = ' + ghystogram[letter]);
     }
 
@@ -91,16 +84,20 @@ function TrisemysSH(key){
 
     for(let letter in ghystogram){
         let percent = (ghystogram[letter]/keySH.length);
-        let h = 200 * percent;
-        let line = document.createElement('div');
-        line.innerHTML = `
-        <div style="width: 50px; height: ${h}px; background-color: coral;">
-            ${Math.floor(percent*100)}%
-        </div>
-        <p>${letter}</p>`
-        ghysto.append(line);
+        DrowGhysto(ghysto, percent, letter)
         console.log(letter + ' = ' + ghystogram[letter]);
     }
 
     console.log('--------------------------------------------');
+}
+
+function DrowGhysto(ghysto, percent, letter){
+    let h = 200 * percent;
+    let line = document.createElement('div');
+    line.innerHTML = `
+    <div style="width: 50px; height: ${h}px; background-color: coral;">
+        ${Math.floor(percent*100)}%
+    </div>
+    <p>${letter}</p>`
+    ghysto.append(line);
 }
