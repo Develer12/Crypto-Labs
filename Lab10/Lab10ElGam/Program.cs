@@ -10,7 +10,7 @@ namespace Lab10ElGam
     {
         private static void Main()
         {
-            Stopwatch time = new Stopwatch();6
+            Stopwatch time = new Stopwatch();
 
             Console.WriteLine("Input string");
             time.Start();
